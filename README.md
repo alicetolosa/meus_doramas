@@ -1,83 +1,60 @@
-# 🎬 Carrossel Animado de Doramas
+# 🎬 Meus Doramas 
 
 <p align="center">
-✨ Interface interativa com carrossel animado de doramas utilizando HTML, CSS e JavaScript
+✨ Interface interativa estilo streaming com carrossel dinâmico de doramas utilizando HTML, CSS e JavaScript
 </p>
 
 ---
-Este é um projeto projeto pessoal, que consiste em um **carrossel animado dos meus doramas favoritos**, onde é possível navegar entre diferentes títulos de forma dinâmica e visualmente atrativa.
+Este é um projeto pessoal que evoluiu de um carrossel clássico de slides para uma **plataforma interativa de catálogo de doramas favoritos**. 
 
-A aplicação apresenta descrições, avaliações e imagens dos doramas, proporcionando uma experiência semelhante a plataformas de streaming.
+A aplicação agora simula a experiência de grandes serviços de streaming, permitindo que o usuário navegue por uma lista horizontal e clique em qualquer título para atualizar instantaneamente o banner principal de destaque (Hero) com sinopse, nota e dados técnicos, sem recarregar a página.
 
 ---
 ## 📸 Preview
-<img src="./img/Animação-de-tela-Dorama.gif" width="900">
+<img src="./assets/images/Animação-de-tela-Dorama.gif" width="900">
 
 ---
 
 ## 🎯 Funcionalidades
 
-* 🎞️ Carrossel animado de imagens
-* ⏭️ Navegação com botões (Next / Back)
-* 🖼️ Miniaturas (thumbnails) sincronizadas
-* 📝 Exibição de título, descrição e avaliação
-* 👍👎 Botões de interação visual
-* 🎨 Interface moderna e responsiva
+* 📱 **Interface Moderna & Imersiva:** Estética escura focada nas imagens das produções (estilo Netflix).
+* 🔄 **Destaque Interativo (Troca de Banner):** Ao clicar em qualquer card do carrossel, o banner do topo atualiza dinamicamente as informações com uma transição suave.
+* ⏭️ **Carrossel Horizontal:** Navegação fluida por botões de avançar e voltar nas listas de doramas.
+* 📂 **Banco de Dados Desacoplado (`data.js`):** Toda a lista de doramas fica isolada em um arquivo de dados, facilitando a inclusão de novos títulos com apenas uma linha de código.
+* 📖 **Página Sobre Física:** Uma seção dedicada a explicar o projeto, totalmente integrada ao design principal.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-* HTML5
-* CSS3 (animações e responsividade)
-* JavaScript (manipulação do DOM)
-* Google Fonts (Poppins)
+* **HTML5:** Estruturação semântica e acessível.
+* **CSS3:** Variáveis globais de cores, Flexbox para o carrossel infinito e transições suaves.
+* **JavaScript (ES6):** Manipulação dinâmica do DOM, controle dos botões de navegação e reatividade ao clique do usuário.
 
 ---
 
 ## 🧩 Estrutura do Projeto
 
+O projeto foi reestruturado de forma modular para manter o código limpo e escalável:
+
 ```bash
-📦 projeto-carrossel-dorama
- ┣ 📜 index.html
- ┣ 📜 style.css
- ┣ 📜 script.js
- ┗ 📂 img
-```
+📦 projeto-meus-doramas
+ ┣ 📂 assets
+ ┃ ┗ 📂 images          # Pôsteres, backgrounds e o GIF de Preview
+ ┣ 📂 css
+ ┃ ┗ 📜 style.css       # Estilização global e variáveis
+ ┣ 📂 js
+ ┃ ┣ 📜 data.js         # Nosso "Banco de dados" com os dados dos doramas
+ ┃ ┗ 📜 script.js       # Motor de interatividade e controle do DOM
+ ┣ 📜 index.html        # Página principal (Dashboard de Doramas)
+ ┗ 📜 sobre.html        # Página sobre o projeto
 
 ---
-
-## ⚙️ Como Funciona
-
-O carrossel é controlado via JavaScript, utilizando manipulação de elementos do DOM:
-
-* O botão **Next** move o primeiro item da lista para o final
-* O botão **Back** move o último item para o início
-* As miniaturas acompanham o movimento do carrossel
-* Classes CSS (`next` e `back`) ativam animações
-
----
-
-## 🎨 Destaques Técnicos
-
-* Uso de **appendChild() e prepend()** para criar efeito de loop infinito
-* Animações com **@keyframes** no CSS
-* Controle de estado visual via **classList**
-* Layout com **position absolute + overlay de conteúdo**
-
----
-
-## 💡 Possíveis Melhorias
-
-* 🔄 Auto-play do carrossel
-* 📱 Melhor responsividade para mobile
-* 🎯 Integração com API de filmes/doramas
-* ❤️ Sistema de favoritos
-* 🌙 Dark/Light mode
-
----
-
-
+##🛠️ Em Construção 
+📂 - NavBar : Coleções, Favoritos 
+📂 - Input type : Buscar dorama
+📂 - Minha Lista 
+📂 - Categorias: Romance, Comédia, Drama, Ação, Suspense, Fantasia, Ver todas
 ---
 
 ## 👩‍💻 Autora
@@ -88,5 +65,7 @@ Feito por **Alice de Oliveira Tolosa**
 
 🔗 LinkedIn: https://www.linkedin.com/in/alice-oliveira81/
 
----
+🔗 Portfolio : https://alicetolosa-portfolio.vercel.app/
+
+
 
