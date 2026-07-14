@@ -1,7 +1,7 @@
-// 1. Seleção de Elementos do DOM
-const cardsContainer = document.getElementById('cards-container');
+// 1. Seleção de Elementos do DOM : Modelo de Objetos do Document
+const cardsContainer = document.getElementById('cards-container'); //Procure um elemento pelo ID
 
-const heroSection = document.getElementById('main-hero');
+const heroSection = document.getElementById('main-hero');// Procure um elemento pelo ID
 const heroTitle = document.getElementById('hero-title');
 const heroDescription = document.getElementById('hero-description');
 const heroRating = document.getElementById('hero-rating');
@@ -9,37 +9,40 @@ const heroYear = document.getElementById('hero-year');
 const heroEpisodes = document.getElementById('hero-episodes');
 const heroGenres = document.getElementById('hero-genres');
 
-const btnPrev = document.querySelector('.carousel-btn.prev');
+const btnPrev = document.querySelector('.carousel-btn.prev'); //Procure qualquer seletor CSS
 const btnNext = document.querySelector('.carousel-btn.next');
 
-// 2. Renderização dos Cards com dados vindos de data.js
+// Função responsável por criar todos os cards dos doramas
 function renderCards() {
   if (!cardsContainer) return;
   cardsContainer.innerHTML = ''; // Garante que comece vazio
 
+  //Percorre todo o array doramasData
   doramasData.forEach(dorama => {
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.style.backgroundImage = `url('${dorama.image}')`;
+    const card = document.createElement('div'); //cria uma <div>
+    card.classList.add('card'); //// Adiciona a classe CSS "card" na div criada
+    card.style.backgroundImage = `url('${dorama.image}')`; //// Define a imagem de fundo do card usando a imagem do dorama
 
+    //O innerHTML permite criar várias tags HTML de uma única vez
     card.innerHTML = `
-      <span class="card-badge">${dorama.rating}</span>
+      <span class="card-badge">${dorama.rating}</span> 
       <div class="card-info">
         <h3>${dorama.title}</h3>
         <p>${dorama.genres.split(', ')[0]}</p>
       </div>
     `;
 
-    // Clique no card altera o banner de destaque (Hero)
+    // Adiciona um evento de clique ao card
     card.addEventListener('click', () => {
-      atualizarDestaque(dorama);
+      atualizarDestaque(dorama);  // Atualiza o Hero (banner principal)
     });
 
+    // Adiciona o card criado dentro do container dos cards.
     cardsContainer.appendChild(card);
   });
 }
 
-// 3. Atualização do Banner de Destaque (Hero)
+// 3. Atualização do Banner de Destaque 
 function atualizarDestaque(dorama) {
   if (!heroSection) return;
   

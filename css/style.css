@@ -272,10 +272,10 @@ body {
   z-index: 5;
 }
 
-.carousel-btn.prev { left: -20px; }
-.carousel-btn.next { right: -20px; }
+.carousel-btn.prev { left: -20px; color:#e1e1e1;font-weight: 600; background-color: #900a97;}
+.carousel-btn.next { right: -20px; color:#e1e1e1;font-weight: 600; background-color: #900a97;}
 
-/* CATEGORIAS */
+/* Categorias */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -298,9 +298,9 @@ body {
   border-color: var(--primary-hover);
 }
 
-/* ==========================================
+/*
    NOVO DESIGN DA PÁGINA SOBRE
-   ========================================== */
+*/
 
 /* Ajuste específico para o banner do Sobre */
 .sobre-hero {
