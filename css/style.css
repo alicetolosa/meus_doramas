@@ -1,0 +1,356 @@
+/* Resets básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --bg-color: #0b0c10;
+  --text-color: #ffffff;
+  --primary-color: #7b2cbf;
+  --primary-hover: #9d4edd;
+  --card-bg: #1f2833;
+  --gray-text: #c5c6c7;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--gray-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  color: var(--text-color);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-box input {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: white;
+  outline: none;
+}
+
+/* HERO (Destaque) */
+.hero {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 4% 80px 4%;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-title .highlight {
+  color: #a29bfe;
+}
+
+.hero-description {
+  color: var(--gray-text);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--gray-text);
+}
+
+.age-rating {
+  background-color: #f39c12;
+  color: black;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-mylist {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* CARDS / GRADE DE DORAMAS */
+.container {
+  padding: 0 4%;
+}
+
+.row-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.cards-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
+}
+
+.cards-grid {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.card {
+  min-width: 180px; /* Largura mínima de cada card */
+  height: 270px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(123, 44, 191, 0.9);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.card-info {
+  position: relative;
+  padding: 12px;
+  z-index: 2;
+}
+
+.card-info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-info p {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+}
+
+.carousel-btn {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.carousel-btn.prev { left: -20px; }
+.carousel-btn.next { right: -20px; }
+
+/* CATEGORIAS */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.category-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.category-item:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-hover);
+}
+
+/* ==========================================
+   NOVO DESIGN DA PÁGINA SOBRE
+   ========================================== */
+
+/* Ajuste específico para o banner do Sobre */
+.sobre-hero {
+  height: 70vh; /* Um pouco menor que o da home para focar no texto abaixo */
+  background-position: center 30%; /* Ajusta o foco da imagem de fundo */
+}
+
+.sobre-content {
+  max-width: 700px;
+}
+
+/* Seção de informações adicionais */
+.info-section {
+  margin-top: 40px;
+  padding-bottom: 60px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.info-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.info-block:hover {
+  transform: translateY(-5px);
+  border-color: rgba(123, 44, 191, 0.4); /* Brilho sutil na cor roxa */
+}
+
+.info-block p {
+  color: var(--gray-text);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.info-block code {
+  background: rgba(123, 44, 191, 0.2);
+  color: var(--primary-hover);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.info-block strong {
+  color: #fff;
+}
