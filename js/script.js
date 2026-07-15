@@ -13,7 +13,7 @@ const btnPrev = document.querySelector('.carousel-btn.prev'); //Procure qualquer
 const btnNext = document.querySelector('.carousel-btn.next');
 
 // Função responsável por criar todos os cards dos doramas
-function renderCards() {
+function renderCards(listaFiltrada = doramasData) {
   if (!cardsContainer) return;
   cardsContainer.innerHTML = ''; // Garante que comece vazio
 
