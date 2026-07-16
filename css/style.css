@@ -32,7 +32,7 @@ body {
   padding: 20px 4%;
   position: absolute;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   gap: 15px;
 }
 
@@ -94,6 +94,7 @@ body {
   padding: 60px 4% 0 4%; /* Reduzido levemente o padding superior */
   position: relative;
   transition: background-image 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  z-index: 10;
 }
 
 .hero::after {
@@ -142,6 +143,7 @@ body {
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 10px;
+  z-index: 20;
 }
 
 .btn-primary {
@@ -360,31 +362,66 @@ body {
 
 /* PÁGINA SOBRE*/
 .sobre-hero {
-  min-height: 60vh;
-  background-position: center 30%;
+  height: 55vh; 
+  background-position: center 25%; 
+  display: flex;
+  align-items: center;
+  padding: 60px 4% 0 4%;
+  position: relative;
 }
 
 .sobre-content {
-  max-width: 700px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.sobre-content .hero-title {
+  font-size: 2.8rem;
+}
+
+.sobre-content .hero-description {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .info-section {
-  margin-top: 40px;
-  padding-bottom: 60px;
+  margin-top: -100px; 
+  padding: 0 4% 15px 4%;
+  position: relative;
+  z-index: 5;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.btn-back-container {
+  margin-bottom: 10px; /* Diminui a distância do botão para os blocos */
 }
 
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 20px; /* Reduzido de 40px para economizar espaço */
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; 
 }
 
 .info-block {
-  background: rgba(255, 255, 255, 0.02);
+ background: rgba(31, 40, 51, 0.6); /* Fundo escuro semi-transparente para melhor leitura */
+  backdrop-filter: blur(10px); /* Efeito de vidro que destaca o texto da imagem de fundo */
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 30px;
+  padding: 20px; 
   border-radius: 12px;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  height: 250px; /* Limita a altura dos blocos para evitar rolagem */
+  overflow-y: auto; 
 }
 
 .info-block:hover {
@@ -396,6 +433,30 @@ body {
   color: var(--gray-text);
   line-height: 1.8;
   font-size: 1rem;
+  border-radius: 4px;
+}
+
+.info-block code {
+  background: rgba(123, 44, 191, 0.2);
+  color: var(--primary-hover);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.info-block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.info-block p {
+  color: var(--gray-text);
+  line-height: 1.5; /* Reduzido de 1.8 para compactar */
+  font-size: 0.88rem; /* Reduzido de 1rem para caber todo o conteúdo */
+}
+
+.info-block strong {
+  color: #fff;
 }
 
 .info-block code {
@@ -409,7 +470,6 @@ body {
 .info-block strong {
   color: #fff;
 }
-
 
 /* Responsividade) */
 
