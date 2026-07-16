@@ -18,7 +18,10 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  overflow-x: hidden;
+  overflow: hidden; 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* NAVBAR */
@@ -82,13 +85,13 @@ body {
 
 /* Hero*/
 .hero {
-  min-height: 70vh; 
+  height: 60vh; /* Altura fixa em vez de min-height */
   background-size: cover;
-  background-position: center;
+  background-position: center 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 4% 0 4%;
+  padding: 60px 4% 0 4%; /* Reduzido levemente o padding superior */
   position: relative;
   transition: background-image 0.4s ease-in-out, opacity 0.2s ease-in-out;
 }
@@ -114,7 +117,7 @@ body {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.1;
   margin: 0;
@@ -127,9 +130,11 @@ body {
 
 .hero-description {
   color: var(--gray-text);
-  line-height: 1.6;
+  line-height: 1.4; 
+  font-size: 0.95rem; 
   margin: 0;
   text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  max-width: 550px; /* Limita a largura para o texto não ficar gigante */
 }
 
 .hero-buttons {
@@ -205,19 +210,23 @@ body {
 
 /* SEÇÃO DOS CARDS  */
 .container {
-  padding: 40px 4% 0 4%;
+  padding: 0 4% 15px 4%; /* Reduzido paddings */
   position: relative;
   z-index: 5;
-  margin-top: -100px; /* sobe 50px */
+  margin-top: -100px; /* Sobe os cards sem esmagar o texto */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Empurra os cards para a base da tela */
 }
 
 .row-section {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.25rem; 
+  margin-bottom: 10px; 
   border-left: 4px solid var(--primary-color);
   padding-left: 10px;
 }
@@ -248,8 +257,8 @@ body {
 }
 
 .card {
-  min-width: 180px;
-  height: 270px;
+  min-width: 140px; /* Reduzido de 180px */
+  height: 200px;    /* Reduzido de 270px */
   background-size: cover;
   background-position: center;
   border-radius: 12px;
@@ -479,6 +488,20 @@ body {
   /* Esconde as setas físicas do carrossel no mobile (o usuário arrasta com o dedo) */
   .carousel-btn {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* Permite rolar no celular */
+    height: auto;
+  }
+  .hero {
+    height: auto; /* Deixa o conteúdo respirar no celular */
+    min-height: 80vh;
+  }
+  .container {
+    margin-top: 0; /* Remove a margem negativa no mobile */
   }
 }
 
