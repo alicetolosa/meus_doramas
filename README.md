@@ -11,13 +11,13 @@ A aplicação agora simula a experiência de grandes serviços de streaming, per
 
 ---
 ## 📸 Preview
-<img src="./assets/images/Animação-de-tela-Dorama.gif" width="900">
+<img src="assets/images/meus_doramas.gif" width="900">
 
 ---
 
 ## 🎯 Funcionalidades
 
-* 📱 **Interface Moderna & Imersiva:** Estética escura focada nas imagens das produções (estilo Netflix).
+* 📱 **Interface Moderna & Imersiva:** Estética escura focada nas imagens das produções 
 * 🔄 **Destaque Interativo (Troca de Banner):** Ao clicar em qualquer card do carrossel, o banner do topo atualiza dinamicamente as informações com uma transição suave.
 * ⏭️ **Carrossel Horizontal:** Navegação fluida por botões de avançar e voltar nas listas de doramas.
 * 📂 **Banco de Dados Desacoplado (`data.js`):** Toda a lista de doramas fica isolada em um arquivo de dados, facilitando a inclusão de novos títulos com apenas uma linha de código.
